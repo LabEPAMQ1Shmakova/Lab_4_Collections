@@ -24,18 +24,23 @@ namespace Lab_4_Collections
             products.Add("Petrol");
             products.Add("Kerosene");
 
+            OilProducts[] oilproducts = new OilProducts[] { DieselFluel, Petrol, Kerosene };
 
-           products.Sort();
+            var sortedoil = from i in oilproducts
+                         orderby i.Name
+                         select i;
+
             
-            foreach (string str in products) ;
+            foreach (OilProducts u in sortedoil)
+                Console.WriteLine(u.Name);
 
-            Console.WriteLine();
-
-            Console.ReadLine();
-        }
-
+            Console.Read();
+            
 
         }
+
+
+    }
         
     }
 
